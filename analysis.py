@@ -3,21 +3,15 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, roc_curve, auc
 
 
-def load_processed_data(path1, path2):
+def load_processed_data(path):
     d1 = dict()
-    d2 = dict()
 
     with open(path1, "r") as f1:
         for line in f1:
             data = line.strip().split(",")
             d1[str(data[0])] = (data[1])
 
-    with open(path2, "r") as f2:
-        for line in f2:
-            data = line.strip().split(",")
-            d2[str(data[0])] = (data[1])
-
-    return d1, d2
+    return d1
 
 
 def plot_confusion_matrix(y_true_dict, y_pred_dict, x_label="Predicted", y_label="Actual", title="Confusion matrix"):
@@ -76,7 +70,7 @@ def plot_roc_curve(y_true_dict, y_pred_dict, title="ROC curve"):
     plt.plot([0, 1], [0, 1], color="gray", lw=2, linestyle="--", label="Random guess")
     plt.xlabel("False Positive rate")
     plt.ylabel("True Positive rate")
-    plt.title("ROC Curve")
+    plt.title(title)
     plt.legend(loc="lower right")
     plt.grid(True, linestyle="--", alpha=0.7)
     plt.show()
@@ -88,7 +82,8 @@ if __name__ == "__main__":
     data1_csv_path = "./results/spagft_results_mouse_embryo.csv"
     data2_csv_path = "./results/fabricated_results_temp.csv"
 
-    data1, data2 = load_processed_data(data1_csv_path, data2_csv_path)
+    data1 = load_processed_data(data1_csv_path)
+    data2 = load_processed_data(data2_csv_path)
     results = plot_confusion_matrix(data1, data2)
 
     print(f"Accuracy:  {results['accuracy']:.4f}")
