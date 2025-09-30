@@ -6,7 +6,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 def load_processed_data(path):
     d1 = dict()
 
-    with open(path1, "r") as f1:
+    with open(path, "r") as f1:
         for line in f1:
             data = line.strip().split(",")
             d1[str(data[0])] = (data[1])
