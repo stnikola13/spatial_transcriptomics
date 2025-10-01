@@ -5,11 +5,10 @@ result_directory = "./results"
 plots_directory = "./plots"
 dataset_names = ["mouse_embryo", "mouse_brain"]
 reference_algorithm = "spagft"
-subject_algorithms = ["shannon_entropy", "spatial_knn", "anova"]
+subject_algorithms = ["shannon_entropy", "anova"]
 
 display_names = {"mouse_embryo": "Mouse embryo",
                  "mouse_brain": "Mouse brain",
                  "spagft": "SpaGFT",
                  "shannon_entropy": "Shannon entropy",
-                 "spatial_knn": "Spatial KNN",
                  "anova": "Anova"}

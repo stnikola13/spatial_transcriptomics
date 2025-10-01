@@ -12,20 +12,6 @@ Recall:    0.0169
 F1 Score:  0.0210
 Area under ROC curve: 0.47
 
-SpaGFT vs Spatial KNN on Mouse embryo dataset:
-Accuracy:  0.8438
-Precision: 0.2527
-Recall:    0.3495
-F1 Score:  0.2933
-Area under ROC curve: 0.62
-
-SpaGFT vs Spatial KNN on Mouse brain dataset:
-Accuracy:  0.9146
-Precision: 0.7268
-Recall:    0.3263
-F1 Score:  0.4504
-Area under ROC curve: 0.66
-
 SpaGFT vs Anova on Mouse embryo dataset:
 Accuracy:  0.9548
 Precision: 0.7282
